@@ -1,0 +1,25 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": "",
+    "ssh_username": ""
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
+      "region": "eu-west-2",
+      "source_ami": "ami-067a98acabcfea808",
+      "instance_type": "t2.micro",
+      "ssh_username": "{{user `ssh_username`}}",
+      "ami_name": "nginxExample {{timestamp}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "nginx.sh"
+    }
+  ]
+}
