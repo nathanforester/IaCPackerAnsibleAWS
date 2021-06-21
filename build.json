@@ -10,7 +10,7 @@
       "access_key": "{{user `aws_access_key`}}",
       "secret_key": "{{user `aws_secret_key`}}",
       "region": "eu-west-2",
-      "source_ami": "ami-067a98acabcfea808",
+      "source_ami": "ami-0194c3e07668a7e36",
       "instance_type": "t2.micro",
       "ssh_username": "{{user `ssh_username`}}",
       "ami_name": "nginxExample {{timestamp}}"

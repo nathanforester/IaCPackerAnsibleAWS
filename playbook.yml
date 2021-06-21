@@ -1,0 +1,41 @@
+-hosts: localhost
+ connection: local
+ vars:
+   key_name:
+   region: eu-west-2
+   image: $AMI_ID
+   id: "Nathan-Forester-Estio-demo1" # need to change demo number for every run
+   sec_group:
+ tasks:
+   name: Facts
+   block: 
+   - name: Get instances facts
+     ec2_instance_info:
+       aws_access_key: "{{ec2_access_key}}"
+       aws_secret_key: "{{ec2_secret_key}}"
+       region: "{{ region }}"
+     register: result
+   - name: Instances ID
+     debug:
+       msg: "ID: {{item.instance_id}} - State: {{item.state.name}} - Public"
+     loop: "{{ result.instances }}"
+   tags: always
+
+   - name: Provisioning EC2 instances
+     block:
+     - name: Provision Instance(s)
+       ec2:
+         aws_acces_key: "{{ec2_access_key}}"
+         aws_secret_key: "{{ec2_secret_key}}"
+         key_name: "{{ key_name }}"
+         id: "{{ id }}"
+         group_id: 
+         image: "{{ image }}"
+         instance_type: t2.micro
+         region: "{{ region }}"
+         wait: true
+         count: 1
+         instance_tags:
+           Name: Nathan-Forester-Estio-Packer-Demo
+
+
