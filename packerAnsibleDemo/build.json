@@ -21,5 +21,13 @@
       "type": "shell",
       "script": "nginx.sh"
     }
+  ],
+  "post-processors": [ 
+     {
+       "type": "mainfest",	     
+        "output": "manifest.json",
+        "strip_path": true
+        }
   ]
 }
+

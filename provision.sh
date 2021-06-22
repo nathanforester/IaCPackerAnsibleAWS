@@ -12,9 +12,10 @@ sudo apt update
 
 sudo apt install packer
 
-sudo apt instal awscli
-
-sudo . /packer/awsconfigure.sh
-
 sudo packer build build.json
+
+export AMI_ID=$(jq -r '.builds[-1].artifact_id' manifest.json | cut -d ":" -f2)
+
+ansible playbook -vvvv playbook.yml
+
 
