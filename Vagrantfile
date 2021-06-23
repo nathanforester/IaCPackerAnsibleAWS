@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
     packer.vm.network :private_network, ip: "192.168.33.14"
     packer.vm.hostname = "packer"
     packer.vm.provision "shell", path: "provision.sh"
-    packer.vm.synced_folder "packerAnsibleDemo/", "/home/ubuntu/packer"
+    packer.vm.synced_folder "packerAnsibleDemo/", "/home/ubuntu/packerAnsibleDemo"
     packer.hostsupdater.aliases = ["packer"]
    end
 

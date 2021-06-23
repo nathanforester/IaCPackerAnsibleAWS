@@ -19,15 +19,13 @@
   "provisioners": [
     {
       "type": "shell",
-      "script": "nginx.sh"
+      "script": "/home/ubuntu/packerAnsibleDemo/nginx.sh"
     }
   ],
   "post-processors": [ 
-     {
-       "type": "mainfest",	     
-        "output": "manifest.json",
-        "strip_path": true
-        }
+	{
+        "type": "vagrant"
+	}
   ]
 }
 

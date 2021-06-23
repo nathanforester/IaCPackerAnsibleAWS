@@ -12,10 +12,12 @@ sudo apt update
 
 sudo apt install packer
 
-sudo packer build build.json
+sudo packer build -var-file "/home/ubuntu/packerAnsibleDemo/vars.json" /home/ubuntu/packerAnsibleDemo/build.json
 
-export AMI_ID=$(jq -r '.builds[-1].artifact_id' manifest.json | cut -d ":" -f2)
+#export AMI_ID=$(jq -r '.builds[-1].artifact_id' manifest.json | cut -d ":" -f2)
 
-ansible playbook -vvvv playbook.yml
+#sudo echo "AMI_ID=$AMI_ID" >> /home/ubuntu/packerAnsibleDemo/secrets.yml
+
+#ansible playbook -vvvv /home/ubuntu/packerAnsibleDemo/playbook.yml --extra-vars "@~/ubuntu/packerAnsibleDemo/secrets.yml"
 
 

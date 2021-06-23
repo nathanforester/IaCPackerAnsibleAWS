@@ -3,7 +3,7 @@
  vars:
    key_name: Estio-Training-NForester
    region: eu-west-2
-   image: ${AMI_ID}
+   image: "{{AMI_ID}}"
    id: "Nathan-Forester-Estio-demo1" # need to change demo number for every run
    sec_group:
  tasks:

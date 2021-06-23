@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/ubuntu/packerAnsibleDemo":{"guestpath":"/home/ubuntu/packerAnsibleDemo","hostpath":"C:/Users/nathan.forester/Documents/DevOps/IaC/Packer/packerAnsibleDemo","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/nathan.forester/Documents/DevOps/IaC/Packer","disabled":false,"__vagrantfile":true}}}
