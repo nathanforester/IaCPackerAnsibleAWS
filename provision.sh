@@ -12,7 +12,7 @@ sudo apt update
 
 sudo apt install packer
 
-sudo packer build -var-file "/home/ubuntu/packerAnsibleDemo/vars.json" /home/ubuntu/packerAnsibleDemo/build.json
+#sudo packer build -var-file "/home/ubuntu/packerAnsibleDemo/vars.json" /home/ubuntu/packerAnsibleDemo/build.json
 
 #export AMI_ID=$(jq -r '.builds[-1].artifact_id' manifest.json | cut -d ":" -f2)
 
